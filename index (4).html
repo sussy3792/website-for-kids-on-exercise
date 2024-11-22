@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Fun for Kids!</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f0f8ff; margin: 0; padding: 0; }
+        h1 { color: #ff6347; margin-top: 20px; }
+        .button { 
+            display: inline-block; padding: 10px 20px; margin: 10px; 
+            background-color: #4caf50; color: white; text-decoration: none; border-radius: 5px;
+        }
+        .button:hover { background-color: #45a049; }
+        .content { padding: 20px; }
+        .back-button { 
+            display: inline-block; margin-top: 20px; padding: 10px 20px; 
+            background-color: #6ab04c; color: white; text-decoration: none; border-radius: 5px; 
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Page -->
+    <div id="home" class="content">
+        <h1>Welcome to the Exercise Fun Website!</h1>
+        <p>Learn all about why exercise is awesome (and when it's not).</p>
+        <a href="#good" class="button">Why Exercise is Good</a>
+        <a href="#bad" class="button">Why Exercise Can Be Bad</a>
+    </div>
+
+    <!-- Why Exercise is Good Page -->
+    <div id="good" class="content" style="display: none; background-color: #dff9fb;">
+        <h1 style="color: #6ab04c;">Why Exercise is Good</h1>
+        <p>Exercise is amazing! It helps you:</p>
+        <ul style="list-style-type: none; padding: 0;">
+            <li>🌟 Feel happy and energetic!</li>
+            <li>💪 Build strong muscles and bones!</li>
+            <li>🧠 Improve your memory and focus!</li>
+        </ul>
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/047/176/920/small/young-boy-practices-football-by-maneuvering-around-cones-in-a-training-center-perfect-for-sports-youth-fitness-and-skill-development-content-photo.jpg" alt="Happy kids exercising" style="border-radius: 10px;">
+        <br><br>
+        <a href="#home" class="back-button">Back to Home</a>
+    </div>
+
+    <!-- Why Exercise Can Be Bad Page -->
+    <div id="bad" class="content" style="display: none; background-color: #ffdddd;">
+        <h1 style="color: #eb4d4b;">Why Exercise Can Be Bad</h1>
+        <p>Too much of anything can be bad, even exercise! Here's why:</p>
+        <ul style="list-style-type: none; padding: 0;">
+            <li>😴 Over-exercising can make you very tired.</li>
+            <li>🤕 It can lead to injuries if you're not careful.</li>
+            <li>🍔 Your body needs rest and food to recover!</li>
+        </ul>
+        <img src="https://medicalcitykidsortho.com/wp-content/uploads/2023/06/hamstring.webp" alt="Tired kid after exercising" style="border-radius: 10px;">
+        <br><br>
+        <a href="#home" class="back-button">Back to Home</a>
+    </div>
+
+    <script>
+        // JavaScript for Navigation Between Sections
+        document.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", function(event) {
+                const targetId = this.getAttribute("href").substring(1);
+                document.querySelectorAll(".content").forEach(section => {
+                    section.style.display = "none";
+                });
+                document.getElementById(targetId).style.display = "block";
+            });
+        });
+
+        // Show the home page by default
+        document.getElementById("home").style.display = "block";
+    </script>
+</body>
+</html>
